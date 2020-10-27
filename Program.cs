@@ -9,7 +9,7 @@ namespace AnaliseCredito
             string EmprestimoDig, ParcelaDig, RendaMensalDig;
             int parcelas;
             decimal valor, rendaMensal, EmprestimoParcela, valorMaximoParcela;
-            bool valorValido, rendaMensalValido, parcelasValido, creditoAprovado;
+            bool valValido, rendaMensalValido, parcelasValido, creditoAprovado;
 
             Console.Clear();
             Console.WriteLine("-- Análise de Crédito --");
@@ -23,13 +23,13 @@ namespace AnaliseCredito
             Console.Write("Informe sua renda mensal ? ");
             RendaMensalDig = Console.ReadLine();
 
-            valorValido = Decimal.TryParse(EmprestimoDig, out valor);
+            valValido = Decimal.TryParse(EmprestimoDig, out valor);
             parcelasValido = Int32.TryParse(ParcelaDig, out parcelas);
             rendaMensalValido = Decimal.TryParse(RendaMensalDig, out rendaMensal);
 
             Console.WriteLine("---");
 
-            if (!valorValido || !parcelasValido ||   !rendaMensalValido)
+            if (!valValido || !parcelasValido ||   !rendaMensalValido)
             {
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("Você digitou algum valor inválido. Tente novamente.");
